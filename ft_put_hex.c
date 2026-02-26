@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_numbers.c                                   :+:      :+:    :+:   */
+/*   ft_put_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyeghiaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/25 21:04:44 by tyeghiaz          #+#    #+#             */
-/*   Updated: 2026/02/26 23:06:56 by tyeghiaz         ###   ########.fr       */
+/*   Created: 2026/02/26 23:07:26 by tyeghiaz          #+#    #+#             */
+/*   Updated: 2026/02/26 23:53:38 by tyeghiaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-
-int	ft_putnbr(int n)
+int	ft_puthex(unsigned int n, char symbol)
 {
-	long	m;
+	char	*alphabet;
+	if (symbol  == 'x')
+		alphabet = "0123456789abcdef";
+	else
+		alphabet = "0123456789ABCDEF";
+	if (n >= 10)
+	{
+		
+	}
 
-	m = n;
-	if (m < 0)
-	{
-		ft_putchar('-');
-		m = -m;
-	}
-	if (m >= 10)	
-	{
-		ft_putnbr(m/10);
-	}
-	ft_putchar((m%10) + '0');
 }
-
-int	ft_putunbr(int n)
