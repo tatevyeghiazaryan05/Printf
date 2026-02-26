@@ -12,4 +12,19 @@
 
 #include "printf.h"
 
-int	ft_putnbr()
+int	ft_putnbr(int n)
+{
+	long	m;
+
+	m = n;
+	if (m < 0)
+	{
+		ft_putchar('-');
+		m = -m;
+	}
+	if (m >= 10)	
+	{
+		ft_putnbr(m/10);
+	}
+	ft_putchar((m%10) + '0');
+}
