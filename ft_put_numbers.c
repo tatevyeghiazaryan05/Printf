@@ -26,7 +26,16 @@ int	ft_putnbr(int n)
 	{
 		ft_putnbr(m/10);
 	}
-	ft_putchar((m%10) + '0');
+	ft_putchar((m % 10) + '0');
+}
+
+int	ft_putunbr(unsigned int n)
+{
+	if (n >= 10)
+	{
+		ft_putunbr(n/10);
+	}
+	ft_putchar((n % 10) + '0');
 }
 
 int	ft_putunbr(int n)
