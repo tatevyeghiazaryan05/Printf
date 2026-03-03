@@ -12,7 +12,16 @@
 
 #include "printf.h"
 
-int	ft_printf(const char *, ... )
+int	ft_printf(const char *format, ... )
 {
+	va_list list;
+	int	count;
+
+
+	count = 0;
+	va_start(list, format);
 	
+	va_arg();
+	va_end(list);
+	return (count);
 }
