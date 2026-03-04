@@ -6,15 +6,15 @@
 /*   By: tyeghiaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 19:28:38 by tyeghiaz          #+#    #+#             */
-/*   Updated: 2026/03/03 23:00:32 by tyeghiaz         ###   ########.fr       */
+/*   Updated: 2026/03/04 22:54:22 by tyeghiaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_printf(const char *format, ... )
+int	ft_printf(const char *format, ...)
 {
-	va_list list;
+	va_list	list;
 	int	count;
 	int	i;
 
@@ -26,25 +26,19 @@ int	ft_printf(const char *format, ... )
 		if (format[i] == '%')
 		{
 			i++;
-			int j;
-			void *m;
-			char *s;
 			if (!format[i])
 				break;
 			else if (format[i] == 'c')
 			{
-				j = va_arg(list, int);
-				count += ft_putchar(j);
+				count += ft_putchar(va_arg(list, int));
 			}
 			else if (format[i] == 's')
 			{
-				s = va_arg(list, char *);
-				count += ft_putstr(s);
+				count += ft_putstr(va_arg(list, char *));
 			}
 			else if (format[i] == 'p')
 			{	
-				m = va_arg(list, void *);
-                                count += ft_putptr(m);
+                count += ft_putptr(va_arg(list, void *));
 			}
 			else if (format[i] == 'i' || format[i] == 'd')
 			{

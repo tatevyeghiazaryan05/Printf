@@ -6,11 +6,12 @@
 /*   By: tyeghiaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 23:07:26 by tyeghiaz          #+#    #+#             */
-/*   Updated: 2026/03/01 19:36:38 by tyeghiaz         ###   ########.fr       */
+/*   Updated: 2026/03/04 22:06:44 by tyeghiaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	ft_puthex(unsigned long n, char symbol)
 {
 	char	*alphabet;
