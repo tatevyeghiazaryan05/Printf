@@ -27,32 +27,44 @@ int	ft_printf(const char *format, ... )
 		{
 			i++;
 			int j;
-			if (format[i] == 'c')
+			void *m;
+			char *s;
+			if (!format[i])
+				break;
+			else if (format[i] == 'c')
 			{
 				j = va_arg(list, int);
 				count += ft_putchar(j);
 			}
 			else if (format[i] == 's')
 			{
-				char *s;
-
 				s = va_arg(list, char *);
 				count += ft_putstr(s);
 			}
 			else if (format[i] == 'p')
-			{
-				void *j;
-				
-				j = va_arg(list, void *);
-                                cont += ft_putstr(format[i]);
+			{	
+				m = va_arg(list, void *);
+                                count += ft_putptr(m);
 			}
-			else if (format[i] == 'i')
+			else if (format[i] == 'i' || format[i] == 'd')
 			{
-				
+				count += ft_putnbr(va_arg(list, int));
 			}
+			else if (format[i] == 'u')
+			{
+				count += ft_putunbr(va_arg(list, unsigned int));
+			}
+			else if (format[i] == 'x' || format[i] == 'X')
+			{
+				count += ft_puthex(va_arg(list, unsigned int), format[i]);
+			}
+			else if (format[i] == '%')
+			{
+				count += ft_putchar('%');
+			}
+		}
 		else
 			count += ft_putchar(format[i]);
-		}
 		i++;
 	}
 	va_end (list);
